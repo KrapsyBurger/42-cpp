@@ -1,53 +1,26 @@
-NAME		= megaphone
+SRCS = megaphone.cpp
 
-SRC			= megaphone.cpp\
+OBJS     = ${SRCS:.c=.o}
 
-SRCSPATH 	= srcs
+CC        = clang++
 
-INCLUDES	= ./includes/
+CFLAGS    = -Werror -Wall -Wextra -std=c++98
 
-OBJDIR		= all_o
+RM        = rm -f
 
-CC			= clang++
-
-CFLAGS		= -Werror -Wall -Wextra -g3
-
-RM			= rm -rf
-
-SRCS = $(addprefix $(SRCSPATH)/,$(SRC))
-
-OBJS        = $(addprefix $(OBJDIR)/,${SRC:.c=.o})
-
-$(OBJDIR)/%.o: $(SRCSPATH)/%.c
-	@printf "$(_ORANGE)Compiling : %s\n" $<
-	@mkdir -p $(OBJDIR)
-	@mkdir -p $(OBJDIR)/ft_printf
-	@$(CC) $(CFLAGS) -I $(INCLUDES) -c $< -o $@
+NAME = megaphone
 
 all: ${NAME}
 
 ${NAME}:	${OBJS}
-	@${CC} ${CFLAGS} -I $(INCLUDES) ${OBJS} -o ${NAME}
-	@printf "$(_GREEN)Compiling DONE !\n"
+	${CC} ${CFLAGS} ${OBJS} -o ${NAME}
 
 clean:
-	@printf "$(_RED)Removing objects...\n"
-	@${RM} ${OBJS} ./all_o/*.o
+	${RM} ${OBJS}
 
 fclean:	clean
-	@printf "$(_RED)Removing $(NAME)...\n"
-	@${RM} ${NAME} ./all_o/*.o all_o
+	${RM} -rf ${NAME}
 
 re:	fclean all
-
-################################################# colors
-
-_WHITE = \e[97m
-_GREEN = \e[38;5;118m
-_ORANGE = \e[38;5;208m
-_RED = \e[38;5;196m
-_R = \e[0m
-
-#################################################
 
 .PHONY: all clean fclean re
