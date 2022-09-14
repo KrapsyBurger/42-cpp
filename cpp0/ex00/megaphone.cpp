@@ -2,8 +2,8 @@
 
 int main(int argc, char **argv)
 {
-	int	idx = 0;
-	int	argv_idx = 0;
+	int	idx(0);
+	int	argv_idx(0);
 
 	while (argv_idx < argc)
 	{

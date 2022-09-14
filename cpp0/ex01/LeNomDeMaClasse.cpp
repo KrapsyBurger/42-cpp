@@ -1,28 +1,42 @@
 #include "LeNomDeMaClasse.hpp"
 
-nomdemaclasse::nomdemaclasse(int b, std::string non)
+PhoneBook::PhoneBook()
 {
-	this->a = b;
-	this->oui = non;
+	this->cont = alloc(8)????? //comment je peux faire un bail du genre ?
 	std::cout << "constructor arg called" << std::endl;
 }
 
-nomdemaclasse::nomdemaclasse() : a(42), oui("oui")
+PhoneBook::~PhoneBook()
 {
-		std::cout << "default constructor called" << std::endl;
+	std::cout << "destructor called int nb" << std::endl;
 }
 
-nomdemaclasse::~nomdemaclasse()
+std::string PhoneBook::getContLine(int i)
 {
-	std::cout << "destructor called int nb" << this->a << std::endl;
+	return (this->cont[i]);
 }
 
-int nomdemaclasse::getInt()
+int PhoneBook::function_add()
 {
-	return (this->a);
+	int	i = 0;
+	/*appeler une fonction similaire a un gnl sur la sortie standard ?*/
+	while (i < 5)
+	{
+		Contact::first_name = retour du gnl;
+		i++;
+		/*free le precedent retour et refaire un gnl*/
+		Contact::last_name = retour du gnl;
+		i++;
+		/*free le precedent retour et refaire un gnl*/
+		Contact::nickname = retour du gnl;
+		i++;
+		/*free le precedent retour et refaire un gnl*/
+		Contact::phone_number = retour du gnl;
+		i++;
+		/*free le precedent retour et refaire un gnl*/
+		Contact::darkest_secret = retour du gnl;
+		i++;
+	}
 }
 
-std::string nomdemaclasse::getString()
-{
-	return (this->oui);
-}
+/*creer une fonction ADD, SEARCH, et EXIT*/
