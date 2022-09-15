@@ -1,5 +1,5 @@
-SRCS = classe.cpp\
-	   LeNomDeMaClasse.cpp\
+SRCS = main.cpp\
+	   PhoneBook.cpp\
 
 
 
@@ -7,7 +7,7 @@ SRCS = classe.cpp\
 
 CC        = clang++
 
-CFLAGS        = -Werror -Wall -Wextra -std=c++98
+CFLAGS        = -Werror -Wall -Wextra -std=c++98 -g3
 
 RM        = rm -f
 
