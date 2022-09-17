@@ -3,23 +3,14 @@
 PhoneBook::PhoneBook()
 {
 	this->contact_nbr = 0;
-	std::cout << "phonebook constructor called" << std::endl;
 }
 
-PhoneBook::~PhoneBook()
-{
-	std::cout << "phonebook destructor called" << std::endl;
-}
+PhoneBook::~PhoneBook() {}
 
-Contact::Contact()
-{
-	std::cout << "contact constructor called" << std::endl;
-}
+Contact::Contact() {}
 
-Contact::~Contact()
-{
-	std::cout << "contact destructor called" << std::endl;
-}
+
+Contact::~Contact() {}
 
 int Contact::setInfo(Contact tab[8], int contact_nbr, int i, std::string line)
 {
