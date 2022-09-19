@@ -1,4 +1,14 @@
 #include "Account.hpp"
+#include <iostream>
+
+Account::Account(int initial_deposit)
+{
+	std::cout << initial_deposit << std::endl;
+}
+
+Account::Account() {}
+
+Account::~Account() {}
 
 int	Account::getNbAccounts()
 {
@@ -20,3 +30,7 @@ int	Account::getNbWithdrawals()
 	return(_totalNbWithdrawals);
 }
 
+void Account::displayAccountsInfos()
+{
+	std::cout << _nbAccounts << std::endl;
+}
