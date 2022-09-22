@@ -14,6 +14,11 @@ std::string Zombie::getName()
 	return(this->name);
 }
 
+void	Zombie::setName(std::string name)
+{
+	this->name = name;
+}
+
 Zombie::~Zombie() {
 	std::cout << "im the destructor of" << this->name << std::endl;
 }
