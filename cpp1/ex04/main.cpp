@@ -20,7 +20,7 @@ int main(int argc, char **argv)
 	file.open(argv[1]);
 	if (file.is_open())
 	{
-		while (file.good())
+		while (file)
 			filetext += file.get();
 	}
 	else
@@ -38,6 +38,7 @@ int main(int argc, char **argv)
 	{
 		filetext.erase(found_idx, strlen(argv[2]));
 		filetext.insert(found_idx, argv3);
+		found_idx += argv3.length();
 		found_idx = filetext.find(argv[2], found_idx + 1);
 	}
 	outfile << filetext;
