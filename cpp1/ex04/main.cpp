@@ -22,6 +22,7 @@ int main(int argc, char **argv)
 	{
 		while (file)
 			filetext += file.get();
+		filetext.erase(filetext.length() - 1, 1);
 	}
 	else
 	{
