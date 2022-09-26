@@ -6,12 +6,16 @@
 class Fixed
 {
 	private:
-		float				number;
-		static const int	bits;
+		int					number;
+		static const int	bits = 8;
 	public:
 		Fixed();
+		Fixed(const int nb);
+		Fixed(const float nb);
 		int		getRawBits() const;
 		void	setRawBits(int const raw);
+		float	toFloat() const;
+		int		toInt() const;
 		Fixed(const Fixed &obj);
 		Fixed& operator=(const Fixed &obj);
 		~Fixed();
