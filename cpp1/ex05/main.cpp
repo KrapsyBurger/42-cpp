@@ -2,8 +2,8 @@
 
 int main()
 {
-	Harl bite;
+	Harl harl;
 
-	bite.complain("ERROR");
+	harl.complain("DEBUG");
 	return (0);
 }

@@ -36,5 +36,4 @@ void	Harl::complain(std::string level)
 		std::cout << "No such level !" << std::endl;
 }
 
-
 Harl::~Harl() {}
