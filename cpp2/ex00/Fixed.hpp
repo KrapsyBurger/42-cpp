@@ -6,7 +6,7 @@
 class Fixed
 {
 	private:
-		float				number;
+		int					number;
 		static const int	bits;
 	public:
 		Fixed();
