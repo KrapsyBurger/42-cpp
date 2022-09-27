@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 
 #ifndef __FIXED_H__
 #define __FIXED_H__
@@ -17,9 +18,11 @@ class Fixed
 		float	toFloat() const;
 		int		toInt() const;
 		Fixed(const Fixed &obj);
-		Fixed& operator=(const Fixed &obj);
+		Fixed &operator=(const Fixed &obj);
 		~Fixed();
-
+		
 };
+
+std::ostream& operator<<(std::ostream &os, const Fixed &obj);
 
 #endif
