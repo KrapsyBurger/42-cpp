@@ -4,9 +4,9 @@ ClapTrap::ClapTrap(std::string name)
 {
 	std::cout << "Claptrap default constructor called" << std::endl;
 	this->name = name;
-	this->hit_points = 100;
-	this->energy_points = 50;
-	this->attack_damage = 20;
+	this->hit_points = 10;
+	this->energy_points = 10;
+	this->attack_damage = 0;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &obj)
@@ -45,6 +45,21 @@ void	ClapTrap::takeDamage(unsigned int amount)
 		std::cout << "My man is dead :(" << std::endl;
 		this->energy_points = 0;
 	}
+}
+
+void	ClapTrap::setAD(unsigned int amount)
+{
+	this->attack_damage = amount;
+}
+
+void	ClapTrap::setHP(unsigned int amount)
+{
+	this->hit_points = amount;
+}
+
+void	ClapTrap::setEP(unsigned int amount)
+{
+	this->energy_points = amount;
 }
 
 void	ClapTrap::beRepaired(unsigned int amount)

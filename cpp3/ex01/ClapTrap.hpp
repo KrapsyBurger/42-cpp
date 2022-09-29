@@ -12,6 +12,9 @@ class ClapTrap
 		unsigned int	attack_damage;
 	public:
 		void			attack(const std::string &target);
+		void			setHP(unsigned int amount);
+		void			setEP(unsigned int amount);
+		void			setAD(unsigned int amount);
 		void			takeDamage(unsigned int amount);
 		void			beRepaired(unsigned int amount);
 		unsigned int	getHitPoints();
