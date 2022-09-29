@@ -1,13 +1,10 @@
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
-#ifndef SCAVTRAP_HPP
-#define SCAVTRAP_HPP
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {}
 
-class ScavTrap
+void	ScavTrap::guardGate()
 {
-	private:
-		std::string name;
-		
-};
+	std::cout << "Entering Gate keeper mode." << std::endl;
+}
 
-#endif
+ScavTrap::~ScavTrap() {};

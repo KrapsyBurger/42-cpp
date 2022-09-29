@@ -1,10 +1,14 @@
 #include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main()
 {
-	ClapTrap yo("niceguy");
+	ScavTrap a("bonsoir");
 
-	yo.beRepaired(10);
-	std::cout << yo.getHitPoints() << std::endl;
+	a.attack("salut");
+	std::cout << a.getHitPoints() << std::endl;
+	a.beRepaired(50); 
+	std::cout << a.getHitPoints() << std::endl;
+	a.guardGate();
 	return (0);
 }
