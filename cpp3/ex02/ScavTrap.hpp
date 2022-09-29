@@ -11,7 +11,6 @@ class ScavTrap : public ClapTrap
 		ScavTrap(std::string name);
 		ScavTrap(ScavTrap const &obj);
 		~ScavTrap();
-		
 };
 
 #endif
