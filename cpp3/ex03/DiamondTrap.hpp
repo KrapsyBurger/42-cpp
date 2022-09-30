@@ -14,6 +14,7 @@ class DiamondTrap : virtual public ClapTrap, virtual public FragTrap, virtual pu
 		void	whoAmI();
 		DiamondTrap(std::string name);
 		DiamondTrap(const DiamondTrap &obj);
+		DiamondTrap &operator=(const DiamondTrap &obj);
 		~DiamondTrap();
 };
 

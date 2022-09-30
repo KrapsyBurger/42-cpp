@@ -12,6 +12,12 @@ DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name), FragTrap(name), Sca
 
 DiamondTrap::DiamondTrap(const DiamondTrap &obj) : ClapTrap(obj), FragTrap(obj), ScavTrap(obj) {}
 
+DiamondTrap &DiamondTrap::operator=(const DiamondTrap &obj)
+{
+	this->name = obj.name;
+	return (*this);
+}
+
 void	DiamondTrap::attack()
 {
 	this->ScavTrap::attack("target");

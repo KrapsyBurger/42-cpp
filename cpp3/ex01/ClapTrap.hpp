@@ -19,6 +19,7 @@ class ClapTrap
 		void			beRepaired(unsigned int amount);
 		unsigned int	getHitPoints();
 		unsigned int	getEnergyPoints();
+		unsigned int	getAttackDamage();
 		ClapTrap(std::string name);
 		ClapTrap(const ClapTrap &obj);
 		ClapTrap &operator=(const ClapTrap &obj);

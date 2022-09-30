@@ -86,6 +86,10 @@ unsigned int	ClapTrap::getHitPoints()
 	return (this->hit_points);
 }
 
+unsigned int	ClapTrap::getAttackDamage()
+{
+	return (this->attack_damage);
+}
 
 
 ClapTrap::~ClapTrap()
