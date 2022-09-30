@@ -4,11 +4,10 @@
 
 int main()
 {
-	const Animal *j = new Dog();
-	const Animal *i = new Cat();
+	Cat youpi;
+	Dog coucou;
 
-	delete i;
-	delete j;
-
+	youpi.makeSound();
+	coucou.makeSound();
 	return (0);
 }
