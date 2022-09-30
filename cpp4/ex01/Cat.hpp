@@ -12,7 +12,9 @@ class Cat : public Animal
 		Cat();
 		Cat(const Cat &obj);
 		Cat &operator=(const Cat &obj);
-		~Cat();
+		void	addIdea(std::string idea);
+		void	affIdea(int i);
+		virtual ~Cat();
 };
 
 #endif

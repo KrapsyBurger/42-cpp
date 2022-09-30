@@ -11,8 +11,10 @@ class Dog : public Animal
 	public:
 		Dog();
 		Dog(const Dog &obj);
+		void	addIdea(std::string idea);
+		void	affIdea(int i);
 		Dog &operator=(const Dog &obj);
-		~Dog();
+		virtual ~Dog();
 };
 
 #endif

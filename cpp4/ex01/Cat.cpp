@@ -9,14 +9,26 @@ Cat::Cat() : Animal()
 
 Cat::Cat(const Cat &obj) : Animal(obj) 
 {
+	this->brainptr = new Brain();
+	*this = obj;
 	std::cout << "Cat copy constructor called" << std::endl;
 }
 
 Cat &Cat::operator=(const Cat &obj)
 {
 	this->type = obj.type;
-	this->brainptr = obj.brainptr;
+	*this->brainptr = *obj.brainptr;
 	return (*this);
+}
+
+void	Cat::addIdea(std::string idea)
+{
+	this->brainptr->addIdeas(idea);
+}
+
+void	Cat::affIdea(int i)
+{
+	this->brainptr->affIdea(i);
 }
 
 Cat::~Cat()

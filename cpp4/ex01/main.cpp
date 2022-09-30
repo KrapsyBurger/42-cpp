@@ -4,18 +4,11 @@
 
 int main()
 {
-	const Animal *tab[5];
-	int i = 0;
+	const Animal *j = new Dog();
+	const Animal *i = new Cat();
 
-	while (i < 2)
-	{
-		tab[i] = new Dog();
-		i++;
-	}
-	while (i < 3)
-	{
-		tab[i] = new Cat();
-		i++;
-	}
+	delete i;
+	delete j;
+
 	return (0);
 }

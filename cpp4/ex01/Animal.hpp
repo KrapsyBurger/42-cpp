@@ -13,7 +13,7 @@ class Animal
 		Animal(const Animal &obj);
 		std::string getType() const;
 		Animal &operator=(const Animal &obj);
-		~Animal();
+		virtual ~Animal();
 };
 
 #endif
