@@ -13,13 +13,16 @@ Data *deserialize(uintptr_t raw)
 int main()
 {
 	Data *coucou = NULL;
+	Data *bonsoir = NULL;
 	coucou = (Data *)malloc(sizeof(Data) * 1);
 	coucou->a = 5;
 	coucou->b = 2;
 
 	uintptr_t oui = serialize(coucou);
-	std::cout << serialize(coucou) << std::endl;
+	bonsoir = deserialize(oui);
+	//std::cout << serialize(coucou) << std::endl;
 	std::cout << deserialize(oui)->b << std::endl;
+	std::cout << bonsoir->a << std::endl;
 	//std::cout << deserialize(serialize(coucou))->a << std::endl;
 	return (0);
 }
