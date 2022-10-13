@@ -31,22 +31,15 @@ class Array
 	Array(const Array &obj)
 	{
 		this->array = new T[obj.size()];
+		this->array_size = obj.size();
 		*this = obj;
 	};
 
 	Array &operator=(const Array &obj)
 	{
-		int i = 0;
-		if (this->size() > obj.size())
-		{
-			std::cout << "Array is too big" << std::endl;
-			return NULL;
-		}
-		else if (this->size() < obj.size())
-		{
-			std::cout << "Array is too small" << std::endl;
-			return NULL;
-		}
+		unsigned int i = 0;
+		if (obj.size() > this->size())
+			throw exception();
 		while (i < obj.size())
 		{
 			this->array[i] = obj.array[i];
@@ -60,7 +53,7 @@ class Array
 		delete [] this->array;
 	};
 
-	unsigned int size()
+	unsigned int size() const
 	{
 		unsigned int i = this->array_size;
 		return (i);
@@ -68,8 +61,8 @@ class Array
 
 	T &operator[](unsigned int i)
 	{
-		if (i > this->size())
-			throw exception();
+		if (i >= this->size())
+		 	throw exception();
 		return (this->array[i]);
 	};
 
@@ -77,7 +70,7 @@ class Array
 	{
 		const char *what() const throw()
 		{
-			return ("Valid index is required");
+			return ("Error");
 		}
 	};
 };
