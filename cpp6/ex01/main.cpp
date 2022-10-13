@@ -14,7 +14,7 @@ int main()
 {
 	Data *coucou = NULL;
 	Data *bonsoir = NULL;
-	coucou = (Data *)malloc(sizeof(Data) * 1);
+	coucou = new Data;
 	coucou->a = 5;
 	coucou->b = 2;
 
@@ -24,5 +24,6 @@ int main()
 	std::cout << deserialize(oui)->b << std::endl;
 	std::cout << bonsoir->a << std::endl;
 	//std::cout << deserialize(serialize(coucou))->a << std::endl;
+	delete coucou;
 	return (0);
 }
