@@ -45,13 +45,13 @@ void	identify(Base &p)
 		(void) dynamic_cast<A &>(p);
 		std::cout << "p is a type A ptr" << std::endl;
 	}
-	catch (std::exception &foo){}
+	catch(std::exception &foo){};
 	try
 	{
 		(void) dynamic_cast<B &>(p);
 		std::cout << "p is a type B ptr" << std::endl;
 	}
-	catch (std::exception &foo){}
+	catch(std::exception &foo){};
 	try
 	{
 		(void) dynamic_cast<C &>(p);

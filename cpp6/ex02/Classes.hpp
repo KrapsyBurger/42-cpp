@@ -1,5 +1,4 @@
 #include <iostream>
-#include <typeinfo>
 
 #ifndef CLASSES_HPP
 #define CLASSES_HPP
