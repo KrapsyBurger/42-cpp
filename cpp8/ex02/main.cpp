@@ -10,5 +10,7 @@ int main()
 	mutant.push(3);
 	MutantStack<int>::iterator it = mutant.begin();
 	std::cout << *it << std::endl;
+	it++;
+	std::cout << *it << std::endl;
 	return (0);
 }
