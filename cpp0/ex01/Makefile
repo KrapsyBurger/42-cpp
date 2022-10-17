@@ -11,7 +11,7 @@ CXXFLAGS        = -Werror -Wall -Wextra -std=c++98 -g3
 
 RM        = rm -f
 
-NAME = a.out
+NAME = PhoneBook
 
 all: ${NAME}
 
