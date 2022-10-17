@@ -1,4 +1,10 @@
 #include <iostream>
+#include <string>
+#include <sstream>
+#include <cstdio>
+
+#ifndef PHONEBOOK_HPP
+#define PHONEBOOK_HPP
 
 class Contact
 {
@@ -28,3 +34,5 @@ class PhoneBook
 		~PhoneBook();
 		std::string getCont(int i);
 };
+
+#endif

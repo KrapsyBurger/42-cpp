@@ -49,21 +49,29 @@ int PhoneBook::function_add()
 {
 	int	i = 0;
 	std::string addline;
-	if (this->contact_nbr == 8)
-		this->contact_nbr = 7;
 	while (i < 5)
 	{
 		PhoneBook::enter_messages(i);
-		std::getline(std::cin, addline);
-		if (addline.size() == 0)
-			std::cout << "This can't be empty !" << std::endl;
+		if (std::getline(std::cin, addline).good() == false)
+		{
+			return (2);
+		}
+		else if (addline.empty() == true)
+		{
+			std::cout << "This cannot be empty !" << std::endl;
+		}
 		else 
 		{
-			this->tab[contact_nbr].setInfo(this->tab, this->contact_nbr, i, addline);
+			if (this->contact_nbr == 8)
+				this->tab[0].setInfo(this->tab, 0, i, addline);
+			else
+				this->tab[contact_nbr].setInfo(this->tab, this->contact_nbr, i, addline);
 			i++;
 		}
 	}
 	std::cout << "Contact created.\n" << std::endl;
+	if (this->contact_nbr == 8)
+		return (0);
 	this->contact_nbr++;
 	return (0);
 }
@@ -73,7 +81,7 @@ int	PhoneBook::function_search()
 	int	new_contact_nbr = 0;
 	int	info_idx = 0;
 	int	putchar_idx = 0;
-
+	std::cout << "     Index| Last name|First name|  Nickname|" << std::endl;
 	while (new_contact_nbr < this->contact_nbr)
 	{
 		std::cout.width(10);
