@@ -4,7 +4,7 @@ SRCS = main.cpp\
 	   FragTrap.cpp\
 	   DiamondTrap.cpp
 
-OBJS     = ${SRCS:.c=.o}
+OBJS     = ${SRCS:.cpp=.o}
 
 CC        = clang++
 

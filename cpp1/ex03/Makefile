@@ -3,7 +3,7 @@ SRCS = main.cpp\
 	   HumanA.cpp\
 	   HumanB.cpp
 
-OBJS     = ${SRCS:.c=.o}
+OBJS     = ${SRCS:.cpp=.o}
 
 CC        = clang++
 

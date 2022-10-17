@@ -7,7 +7,7 @@ SRCS = main.cpp\
 	   Intern.cpp
 	   
 
-OBJS     = ${SRCS:.c=.o}
+OBJS     = ${SRCS:.cpp=.o}
 
 CC        = clang++
 

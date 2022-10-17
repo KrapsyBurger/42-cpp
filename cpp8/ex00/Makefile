@@ -2,7 +2,7 @@ SRCS = main.cpp
 
 	   
 
-OBJS     = ${SRCS:.c=.o}
+OBJS     = ${SRCS:.cpp=.o}
 
 CC        = clang++
 

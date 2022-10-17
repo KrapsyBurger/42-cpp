@@ -2,7 +2,7 @@ SRCS = main.cpp\
 	   ClapTrap.cpp\
 	   ScavTrap.cpp
 
-OBJS     = ${SRCS:.c=.o}
+OBJS     = ${SRCS:.cpp=.o}
 
 CC        = clang++
 
