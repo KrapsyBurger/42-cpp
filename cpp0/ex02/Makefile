@@ -5,9 +5,9 @@ SRCS = Account.cpp\
 
  OBJS        = ${SRCS:.cpp=.o}
 
-CC        = clang++
+CXX        = c++
 
-CFLAGS        = -std=c++98 -g3
+CXXFLAGS        = -std=c++98 -g3
 
 RM        = rm -f
 
@@ -16,7 +16,7 @@ NAME = a.out
 all: ${NAME}
 
 ${NAME}:	${OBJS}
-	${CC} ${CFLAGS} ${OBJS} -o ${NAME}
+	${CXX} ${CXXFLAGS} ${OBJS} -o ${NAME}
 
 clean:
 	${RM} ${OBJS}

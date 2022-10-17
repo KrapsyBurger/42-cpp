@@ -7,9 +7,9 @@ SRCS = main.cpp\
 
 OBJS     = ${SRCS:.cpp=.o}
 
-CC        = clang++
+CXX        = c++
 
-CFLAGS    = -Werror -Wall -Wextra -g -std=c++98
+CXXFLAGS    = -Werror -Wall -Wextra -g -std=c++98
 
 RM        = rm -f
 
@@ -18,7 +18,7 @@ NAME = a.out
 all: ${NAME}
 
 ${NAME}:	${OBJS}
-	${CC} ${CFLAGS} ${OBJS} -o ${NAME}
+	${CXX} ${CXXFLAGS} ${OBJS} -o ${NAME}
 
 clean:
 	${RM} ${OBJS}
