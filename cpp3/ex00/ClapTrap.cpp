@@ -26,6 +26,11 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &obj)
 
 void	ClapTrap::attack(const std::string &target)
 {
+	if (this->hit_points == 0)
+	{
+		std::cout << this->name << " is dead, he can't do anything :(" << std::endl;
+		return ;
+	}
 	if (this->energy_points > 0)
 	{
 		std::cout << this->name << " attacks " << target << ", causing " << this->attack_damage << " points of damage !" << std::endl;
@@ -37,14 +42,14 @@ void	ClapTrap::attack(const std::string &target)
 
 void	ClapTrap::takeDamage(unsigned int amount)
 {
+	if (this->hit_points <= 0)
+	{
+		this->energy_points = 0;
+		return ;
+	}
 	this->hit_points -= amount;
 	std::cout << "Took " << amount << " hit points !" << std::endl;
 	std::cout << this->hit_points << " hit points left !" << std::endl;
-	if (this->hit_points <= 0)
-	{
-		std::cout << "My man is dead :(" << std::endl;
-		this->energy_points = 0;
-	}
 }
 
 void	ClapTrap::beRepaired(unsigned int amount)

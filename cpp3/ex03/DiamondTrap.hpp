@@ -10,7 +10,7 @@ class DiamondTrap : virtual public ClapTrap, virtual public FragTrap, virtual pu
 	private:
 		std::string name;
 	public:
-		void	attack();
+		void	attack(std::string target);
 		void	whoAmI();
 		DiamondTrap(std::string name);
 		DiamondTrap(const DiamondTrap &obj);

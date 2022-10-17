@@ -18,9 +18,9 @@ DiamondTrap &DiamondTrap::operator=(const DiamondTrap &obj)
 	return (*this);
 }
 
-void	DiamondTrap::attack()
+void	DiamondTrap::attack(std::string target)
 {
-	this->ScavTrap::attack("target");
+	this->ScavTrap::attack(target);
 }
 
 void	DiamondTrap::whoAmI()
