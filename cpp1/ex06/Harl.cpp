@@ -2,10 +2,14 @@
 
 Harl::Harl()
 {
-	this->function_map["DEBUG"] = &Harl::debug;
-	this->function_map["INFO"] = &Harl::info;
-	this->function_map["WARNING"] = &Harl::warning;
-	this->function_map["ERROR"] = &Harl::error;
+	this->func_tab[0] = &Harl::debug;
+	this->func_tab[1] = &Harl::info;
+	this->func_tab[2] = &Harl::warning;
+	this->func_tab[3] = &Harl::error;
+	this->levels[0] = "DEBUG";
+	this->levels[1] = "INFO";
+	this->levels[2] = "WARNING";
+	this->levels[3] = "ERROR";
 }
 
 void	Harl::debug()
@@ -28,48 +32,41 @@ void	Harl::error()
 	std::cout << "ERROR : This is unacceptable! I want to speak to the manager now." << std::endl;
 }
 
-int		Harl::level_convert(std::string level)
-{
-	if (level == "DEBUG")
-		return (1);
-	else if (level == "INFO")
-		return (2);
-	else if (level == "WARNING")
-		return (3);
-	else if (level == "ERROR")
-		return (4);
-	return (0);
-}
 
 void	Harl::complex_complain(std::string level)
 {
-	int	conv = level_convert(level);
-	if (function_map.find(level) != function_map.end())
+	int i = 0;
+
+	while (i < 4)
 	{
-		switch(conv)
-		{
-			case 1:
-				(this->*function_map[level])();
-				(this->*function_map["INFO"])();
-				(this->*function_map["WARNING"])();
-				(this->*function_map["ERROR"])();
-				break;
-			case 2:
-				(this->*function_map[level])();
-				(this->*function_map["WARNING"])();
-				(this->*function_map["ERROR"])();
-				break;
-			case 3:
-				(this->*function_map[level])();
-				(this->*function_map["ERROR"])();
-				break;
-			case 4:
-				(this->*function_map[level])();
-				break;
-		}
+		if (levels[i] == level)
+			break ;
+		i++;
 	}
-	else
-		std::cout << "No such level !" << std::endl;
+	switch(i)
+	{
+		case 0:
+			(this->*func_tab[i])();
+			(this->*func_tab[i + 1])();
+			(this->*func_tab[i + 2])();
+			(this->*func_tab[i + 3])();
+			break;
+		case 1:
+			(this->*func_tab[i])();
+			(this->*func_tab[i + 1])();
+			(this->*func_tab[i + 2])();
+			break;
+		case 2:
+			(this->*func_tab[i])();
+			(this->*func_tab[i + 1])();
+			break;
+		case 3:
+			(this->*func_tab[i])();
+			break;
+		case 4:
+			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+			break;
+	}
 }
 
 

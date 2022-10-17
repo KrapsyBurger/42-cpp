@@ -9,7 +9,7 @@ CXXFLAGS    = -Werror -Wall -Wextra -g -std=c++98
 
 RM        = rm -f
 
-NAME = a.out
+NAME = HarlFilter
 
 all: ${NAME}
 

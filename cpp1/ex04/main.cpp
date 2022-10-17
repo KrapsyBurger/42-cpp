@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
-#include <string>
+#include <cstring>
+#include <string.h>
 
 int main(int argc, char **argv)
 {
@@ -14,7 +15,7 @@ int main(int argc, char **argv)
 
 	newfile = argv[1];
 	newfile += ".replace";
-	std::ofstream outfile(newfile);
+	std::ofstream outfile(newfile.c_str());
 	found_idx = 0;
 	argv3 = argv[3];
 	file.open(argv[1]);

@@ -1,5 +1,4 @@
 #include <iostream>
-#include <unordered_map>
 
 #ifndef __HARL_H__
 #define __HARL_H__
@@ -12,9 +11,9 @@ class Harl
 		void	info();
 		void	warning();
 		void	error();
-		int		level_convert(std::string level);
 	public:
-		std::unordered_map<std::string, void (Harl::*)()> function_map;
+		void	(Harl::*func_tab[4])();
+		std::string levels[4];
 		void	complex_complain(std::string level);
 		Harl();
 		~Harl();

@@ -6,7 +6,7 @@ Zombie::Zombie() {
 
 void	Zombie::announce()
 {
-	std::cout << ": BraiiiiiiinnnzzzZ..." << std::endl;
+	std::cout << this->name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }
 
 std::string Zombie::getName()
