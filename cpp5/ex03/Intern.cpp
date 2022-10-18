@@ -2,6 +2,12 @@
 
 Intern::Intern()
 {
+	this->forms[0] = "robotomy request";
+	this->forms[1] = "presidential pardon";
+	this->forms[2] = "shrubbery creation";
+	this->func_tab[0] = &Intern::makeRobotomyRequest;
+	this->func_tab[1] = &Intern::makePresidentialPardon;
+	this->func_tab[2] = &Intern::makeShrubberyCreation;
 	std::cout << GREEN << "Intern default constructor called" << STOP << std::endl;
 }
 
@@ -22,15 +28,16 @@ Form *Intern::makeShrubberyCreation(std::string target)
 
 Form *Intern::makeForm(std::string FormName, std::string target)
 {
-	this->func["robotomy request"] = &Intern::makeRobotomyRequest;
-	this->func["presidential pardon"] = &Intern::makePresidentialPardon;
-	this->func["shrubbery creation"] = &Intern::makeShrubberyCreation;
-	if (!this->func[FormName])
+	int i = 0;
+	while (this->forms[i] != FormName && i < 3)
+		i++;
+	if (i > 2)
 	{
-		std::cout << "Can't find this form" << std::endl;
+		std::cout << "This form doesnt exist" << std::endl;
 		return (NULL);
 	}
-	return ((this->*func["robotomy request"])(target));
+	else
+		return ((this->*func_tab[i])(target));
 }
 
 Intern::~Intern()

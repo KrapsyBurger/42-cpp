@@ -16,11 +16,11 @@ void	PresidentialPardonForm::execute(const Bureaucrat &executor) const
 {
 	if (this->isSigned() == 0)
 	{
-		std::cout << "This form isnt signed." << std::endl;
+		throw IsntSigned();
 		return ;
 	}
 	if (executor.getGrade() > this->getExecGrade())
-		throw Form::GradeTooLowException();
+		throw GradeTooLowException();
 	std::cout << this->target << " has been forgiven by Zaphod Beeblebrox." << std::endl;
 	std::cout << executor.getName() << " well executed " << this->getName() << std::endl;
 	

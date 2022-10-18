@@ -16,11 +16,11 @@ void	RobotomyRequestForm::execute(const Bureaucrat &executor) const
 {
 	if (this->isSigned() == 0)
 	{
-		std::cout << "This form isnt signed." << std::endl;
+		throw IsntSigned();
 		return ;
 	}
 	if (executor.getGrade() > this->getExecGrade())
-		throw Form::GradeTooLowException();
+		throw GradeTooLowException();
 	std::cout << "*LOUD DRILL NOISES*" << std::endl;
 	std::cout << "waiting..." << std::endl << "..." << std::endl;
 	std::cout << this->target << " has been successfully robotomised with success 50% of the time" << std::endl;

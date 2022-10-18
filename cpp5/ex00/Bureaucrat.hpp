@@ -6,14 +6,14 @@
 class Bureaucrat
 {
 	private:
-		std::string const	name;
+		std::string			name;
 		int					grade;
 	public:
 		std::string	getName();
 		int			getGrade();
 		void		gradeIncr();
 		void		gradeDecr();
-		Bureaucrat(int grade);
+		Bureaucrat(std::string name, int grade);
 		Bureaucrat(const Bureaucrat &obj);
 		Bureaucrat &operator=(const Bureaucrat &obj);
 		~Bureaucrat();

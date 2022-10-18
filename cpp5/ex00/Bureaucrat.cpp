@@ -1,6 +1,6 @@
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat(int grade) : name("Lucas Sokol")
+Bureaucrat::Bureaucrat(std::string name, int grade) : name(name)
 {
 	if (grade < 0)
 		throw Bureaucrat::GradeTooHighException();
@@ -47,6 +47,7 @@ void		Bureaucrat::gradeDecr()
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &obj)
 {
 	this->grade = obj.grade;
+	this->name = obj.name;
 	return (*this);
 }
 

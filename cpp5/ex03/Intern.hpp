@@ -1,5 +1,4 @@
 #include <iostream>
-#include <unordered_map>
 #include "color.hpp"
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
@@ -14,7 +13,8 @@ class Intern
 {
 	private:
 	public:
-		std::unordered_map<std::string, Form *(Intern::*)(std::string)> func;
+		Form	*(Intern::*func_tab[3])(std::string target);
+		std::string forms[3];
 		Form *makeForm(std::string FormName, std::string target);
 		Form *makePresidentialPardon(std::string target);
 		Form *makeRobotomyRequest(std::string target);

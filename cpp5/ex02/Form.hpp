@@ -42,7 +42,14 @@ class Form
 					return ("Form : Grade is too low !");
 				}
 		};
-
+		class IsntSigned : public std::exception
+		{
+			public:
+				virtual const char *what() const throw() 
+				{
+					return ("Form : this form isn't signed !");
+				}
+		};
 };
 
 std::ostream& operator<<(std::ostream &os, Form &lucas);

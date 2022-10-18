@@ -16,18 +16,18 @@ void	ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 {
 	if (this->isSigned() == 0)
 	{
-		std::cout << "This form isnt signed." << std::endl;
+		throw IsntSigned();
 		return ;
 	}
 	if (executor.getGrade() > this->getExecGrade())
-		throw Form::GradeTooLowException();
+		throw GradeTooLowException();
 	std::ifstream file;
 	std::string newfile;
 	newfile = this->target;
 	newfile += "_shrubbery";
-	std::ofstream outfile(newfile);
+	std::ofstream outfile(newfile.c_str());
 
-	file.open(newfile);
+	file.open(newfile.c_str());
 	if (file.is_open() == 0)
 	{
 		std::cout << "Cannot create file." << std::endl;

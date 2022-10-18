@@ -1,6 +1,6 @@
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat(int grade) : name("Lucas Sokol")
+Bureaucrat::Bureaucrat(std::string name, int grade) : name(name)
 {
 	if (grade < 0)
 		throw Bureaucrat::GradeTooHighException();
@@ -23,9 +23,10 @@ std::string Bureaucrat::getName()
 
 void		Bureaucrat::signForm(Form &obj)
 {
-	if (obj.isSigned() == 1)
+	if (this->grade < obj.getSigningGrade())
 	{
 		std::cout << this->name << " signed " << obj.getName() << std::endl;
+		obj.sign_it();
 	}
 	else
 		std::cout << this->name << " couldn't sign " << obj.getName() << " because " << " grade is too low" << std::endl;
@@ -57,6 +58,7 @@ void		Bureaucrat::gradeDecr()
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &obj)
 {
 	this->grade = obj.grade;
+	this->name = obj.name;
 	return (*this);
 }
 

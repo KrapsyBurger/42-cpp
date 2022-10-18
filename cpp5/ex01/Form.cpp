@@ -37,6 +37,11 @@ void		Form::beSigned(Bureaucrat Lucas)
 	this->is_signed = 1;
 }
 
+void		Form::sign_it()
+{
+	this->is_signed = 1;
+}
+
 std::string const	Form::getName()
 {
 	return (this->name);

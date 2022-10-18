@@ -7,12 +7,14 @@
 
 int main()
 {
-	Bureaucrat Lucas(25, "Lucas");
-	Bureaucrat Nathan(2, "Nathan");
+	Bureaucrat Lucas(46, "Lucas");
+	Bureaucrat Nathan(25, "Nathan");
 	Intern someRandom;
 	Form *formulaire = someRandom.makeForm("robotomy request", "Bender");
+	Form *oui = someRandom.makeForm("shrubbery creation", "Soso Maness");
 	try
 	{
+		std::cout << CYAN;
 		Lucas.signForm(*formulaire);
 		std::cout << *formulaire << std::endl;
 		Nathan.executeForm(*formulaire);
@@ -21,5 +23,22 @@ int main()
 	{
 		std::cerr << e.what() << std::endl;
 	}
+	std::cout << STOP;
+	try
+	{
+		std::cout << MAGENTA;
+		Lucas.signForm(*oui);
+		std::cout << *oui << std::endl;
+		Nathan.executeForm(*oui);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+	std::cout << STOP;
+	Form *test = someRandom.makeForm("DOESNT WORK", "sfsfsfsdf");
+	delete formulaire;
+	delete oui;
+	delete test;
 	return (0);
 }
