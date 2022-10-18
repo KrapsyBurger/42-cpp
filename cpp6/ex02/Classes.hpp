@@ -1,4 +1,6 @@
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
 
 #ifndef CLASSES_HPP
 #define CLASSES_HPP

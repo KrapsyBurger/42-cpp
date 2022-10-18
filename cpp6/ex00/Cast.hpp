@@ -1,4 +1,6 @@
 #include <iostream>
+#include <cstdlib>
+#include <cstring>
 
 #ifndef CAST_HPP
 #define CAST_HPP

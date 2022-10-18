@@ -1,15 +1,12 @@
 #include "Classes.hpp"
-#include <random>
 
 Base::~Base() {}
 
 Base	*generate(void)
 {
-	std::random_device rd;
-    std::mt19937 gen(rd());
-    std::uniform_int_distribution<> yes(1, 3);
+	srand(time(NULL));
 	Base *ptr;
-	int a = yes(gen);
+	int a = rand()%(3-1+1) + 1;
 	if (a == 1)
 	{
 		ptr = new A();

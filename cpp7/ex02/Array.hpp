@@ -8,71 +8,71 @@ template<typename T>
 class Array
 {
 	private:
-	T *array;
-	unsigned int array_size;
+		T *array;
+		unsigned int array_size;
 	public:
-	Array()
-	{
-		this->array_size = 0;
-	};
-
-	Array(unsigned int n)
-	{
-		unsigned int i = 0;
-		this->array = new T[n];
-		while (i < n)
+		Array()
 		{
-			this->array[i] = 0;
-			i++;
-		}
-		this->array_size = n;
-	};
+			this->array_size = 0;
+		};
 
-	Array(const Array &obj)
-	{
-		this->array = new T[obj.size()];
-		this->array_size = obj.size();
-		*this = obj;
-	};
-
-	Array &operator=(const Array &obj)
-	{
-		unsigned int i = 0;
-		if (obj.size() > this->size())
-			throw exception();
-		while (i < obj.size())
+		Array(unsigned int n)
 		{
-			this->array[i] = obj.array[i];
-			i++;
-		}
-		return (*this);
-	};
+			unsigned int i = 0;
+			this->array = new T[n];
+			while (i < n)
+			{
+				this->array[i] = 0;
+				i++;
+			}
+			this->array_size = n;
+		};
 
-	~Array()
-	{
-		delete [] this->array;
-	};
-
-	unsigned int size() const
-	{
-		unsigned int i = this->array_size;
-		return (i);
-	};
-
-	T &operator[](unsigned int i)
-	{
-		if (i >= this->size())
-		 	throw exception();
-		return (this->array[i]);
-	};
-
-	class exception : public std::exception
-	{
-		const char *what() const throw()
+		Array(const Array &obj)
 		{
-			return ("Error");
-		}
-	};
+			this->array = new T[obj.size()];
+			this->array_size = obj.size();
+			*this = obj;
+		};
+
+		Array &operator=(const Array &obj)
+		{
+			unsigned int i = 0;
+			if (obj.size() > this->size())
+				throw exception();
+			while (i < obj.size())
+			{
+				this->array[i] = obj.array[i];
+				i++;
+			}
+			return (*this);
+		};
+
+		virtual ~Array()
+		{
+			//delete [] this->array;
+		};
+
+		unsigned int size() const
+		{
+			unsigned int i = this->array_size;
+			return (i);
+		};
+
+		T &operator[](unsigned int i)
+		{
+			if (i > this->size())
+			 	throw exception();
+			return (this->array[i]);
+		};
+
+		class exception : public std::exception
+		{
+			const char *what() const throw()
+			{
+				return ("Error");
+			}
+		};
 };
 
 #endif

@@ -1,5 +1,4 @@
 #include "Classes.hpp"
-#include <random>
 #include <iostream>
 
 
@@ -9,5 +8,6 @@ int main()
 
 	a = generate();
 	identify(a);
+	delete a;
 	return (0);
 }

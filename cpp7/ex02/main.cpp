@@ -1,14 +1,11 @@
 #include "Array.hpp"
+#include <cstdlib>
+#include <ctime>
+#include "color.hpp"
+
 
 #define MAX_VAL 750
 
-// int main()
-// {
-// 	Array<int> tab(5);
-
-// 	std::cout << tab[2] << std::endl;
-// 	return (0);
-// }
 
 int main(int, char **)
 {
@@ -21,7 +18,6 @@ int main(int, char **)
 		numbers[i] = value;
 		mirror[i] = value;
 	}
-	//SCOPE
 	{
 		Array<int> tmp = numbers;
 		Array<int> test(tmp);
@@ -36,11 +32,11 @@ int main(int, char **)
 	}
 	try
 	{
-		numbers[-2] = 0;
+	 	numbers[-2] = 0;
 	}
-	catch(const std::exception& e)
+	 catch(const std::exception& e)
 	{
-		std::cerr << e.what() << '\n';
+	 	std::cerr << e.what() << '\n';
 	}
 	try
 	{
@@ -54,6 +50,6 @@ int main(int, char **)
 	{
 		numbers[i] = rand();
 	}
-	delete [] mirror;//
+	delete [] mirror;
 	return 0;
 }
