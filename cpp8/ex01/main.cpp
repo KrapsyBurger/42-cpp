@@ -3,7 +3,7 @@
 #include "color.hpp"
 
 int myRand(void) {
-    static int seed __attribute__((unused)) = (srand(time(nullptr)), 0);
+    static int seed __attribute__((unused)) = (srand(time(NULL)), 0);
     int res = rand() % 1000000;
     return res;
 }
