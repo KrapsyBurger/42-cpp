@@ -2,10 +2,11 @@ SRCS = main.cpp
 	   
 
 OBJS     = ${SRCS:.cpp=.o}
+DEPS	 = ${SRCS:.cpp=.d}
 
 CXX        = c++
 
-CXXFLAGS    = -Werror -Wall -Wextra -g -std=c++98
+CXXFLAGS    = -MD -Werror -Wall -Wextra -g -std=c++98
 
 RM        = rm -f
 
@@ -18,10 +19,13 @@ ${NAME}:	${OBJS}
 
 clean:
 	${RM} ${OBJS}
+	${RM} ${DEPS}
 
 fclean:	clean
 	${RM} -rf ${NAME}
 
 re:	fclean all
+
+-include $(DEPS)
 
 .PHONY: all clean fclean re
