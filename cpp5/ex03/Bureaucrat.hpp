@@ -20,6 +20,7 @@ class Bureaucrat
 		void		gradeIncr();
 		void		gradeDecr();
 		void		executeForm(Form const &form);
+		Bureaucrat();
 		Bureaucrat(int grade, std::string name);
 		Bureaucrat(const Bureaucrat &obj);
 		Bureaucrat &operator=(const Bureaucrat &obj);

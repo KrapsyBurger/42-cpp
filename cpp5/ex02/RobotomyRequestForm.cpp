@@ -1,5 +1,10 @@
 #include "RobotomyRequestForm.hpp"
 
+RobotomyRequestForm::RobotomyRequestForm()
+{
+	std::cout << "RobotomyRequestForm default constructor called" << std::endl;
+}
+
 RobotomyRequestForm::RobotomyRequestForm(std::string target) : Form("RobotomyRequestForm", 72, 45)
 {
 	this->target = target;

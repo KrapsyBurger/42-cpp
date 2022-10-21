@@ -1,5 +1,7 @@
 #include "Span.hpp"
 
+Span::Span() {}
+
 Span::Span(unsigned int N)
 {
 	this->tab.reserve(N);

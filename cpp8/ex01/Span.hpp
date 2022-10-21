@@ -11,6 +11,7 @@ class Span
 		unsigned int				og_size;
 		std::vector<int>			tab;
 	public:
+		Span();
 		Span(unsigned int N);
 		Span(const Span &obj);
 		Span &operator=(const Span &obj);

@@ -13,6 +13,7 @@ class Bureaucrat
 		int			getGrade();
 		void		gradeIncr();
 		void		gradeDecr();
+		Bureaucrat();
 		Bureaucrat(std::string name, int grade);
 		Bureaucrat(const Bureaucrat &obj);
 		Bureaucrat &operator=(const Bureaucrat &obj);

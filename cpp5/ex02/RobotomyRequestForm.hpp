@@ -10,6 +10,7 @@ class RobotomyRequestForm : public Form
 	private:
 		std::string target;
 	public:
+		RobotomyRequestForm();
 		RobotomyRequestForm(std::string target);
 		void	execute(Bureaucrat const &executor) const;
 		RobotomyRequestForm(const RobotomyRequestForm &obj);

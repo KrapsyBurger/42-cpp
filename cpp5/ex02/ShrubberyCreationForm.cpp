@@ -1,5 +1,10 @@
 #include "ShrubberyCreationForm.hpp"
 
+ShrubberyCreationForm::ShrubberyCreationForm()
+{
+	std::cout << "ShrubberyCreationForm default constructor called" << std::endl;
+}
+
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : Form("ShrubberyCreation", 145, 137)
 {
 	this->target = target;

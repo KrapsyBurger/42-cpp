@@ -22,6 +22,7 @@ class Form
 		void				sign_it();
 		virtual void		execute(Bureaucrat const &executor) const = 0;
 		void				beSigned(Bureaucrat &signer);
+		Form();
 		Form(std::string name, int signing_grade, int exec_grade);
 		Form &operator=(const Form &obj);
 		Form(const Form &obj);

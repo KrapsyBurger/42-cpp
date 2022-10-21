@@ -1,5 +1,10 @@
 #include "PresidentialPardonForm.hpp"
 
+PresidentialPardonForm::PresidentialPardonForm()
+{
+	std::cout << "PresidentialPardonFrom default constructor called" << std::endl;
+}
+
 PresidentialPardonForm::PresidentialPardonForm(std::string target) : Form("PresidentialPardonForm", 25, 5)
 {
 	this->target = target;

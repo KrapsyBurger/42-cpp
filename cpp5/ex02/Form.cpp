@@ -1,6 +1,10 @@
 #include "Form.hpp"
 #include "Bureaucrat.hpp"
 
+Form::Form()
+{
+	std::cout << "Form default constructor called" << std::endl;
+}
 
 Form::Form(std::string name, int signing_grade, int exec_grade) : name(name), signing_grade(signing_grade), exec_grade(exec_grade)
 {
