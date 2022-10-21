@@ -9,11 +9,11 @@ class Dog : public Animal
 	private:
 		Brain *brainptr;
 	public:
+		void makeSound() const;
 		Dog();
 		Dog(const Dog &obj);
 		void	addIdea(std::string idea);
-		void	affIdea(int i);
-		void	makeSound() const;
+		void	affIdea();
 		Dog &operator=(const Dog &obj);
 		virtual ~Dog();
 };

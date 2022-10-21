@@ -19,12 +19,7 @@ Animal &Animal::operator=(const Animal &obj)
 
 void	Animal::makeSound() const
 {
-	if (this->type == "Dog")
-		std::cout << "*BARK LOUDLY*" << std::endl;
-	else if (this->type == "Cat")
-		std::cout << "*meow cutely*" << std::endl;
-	else
-		std::cout << "Unknown type, is that an alien ?" << std::endl;
+	std::cout << "sounds like a wrong animal" << std::endl;
 }
 
 std::string Animal::getType() const

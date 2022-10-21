@@ -31,15 +31,24 @@ void	Brain::addIdeas(std::string idea)
 	this->ideas[i] = idea;
 }
 
-void	Brain::affIdea(int i)
+void	Brain::affIdea()
 {
-	if (this->ideas[i].empty() == true)
+	int i = 0;
+	while (this->ideas[i].empty() != true)
 	{
-		std::cout << "This idea doesnt exist." << std::endl;
-		return ;
-	}
-	else 
 		std::cout << this->ideas[i] << std::endl;
+		i++;
+	}
+}
+
+void	Brain::addIdeaidx(std::string idea, int i)
+{
+	this->ideas[i] = idea;
+}
+
+std::string Brain::getIdea(int i)
+{
+	return (this->ideas[i]);
 }
 
 Brain::~Brain()

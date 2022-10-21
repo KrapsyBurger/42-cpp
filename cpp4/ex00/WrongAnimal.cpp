@@ -19,10 +19,7 @@ WrongAnimal &WrongAnimal::operator=(const WrongAnimal &obj)
 
 void	WrongAnimal::makeSound() const
 {
-	if (this->type == "Wrong Cat")
-		std::cout << "*meow like a wrong cat*" << std::endl;
-	else
-		std::cout << "Unknown type, is that an alien ?" << std::endl;
+	std::cout << "*sounds like a wrong animal" << std::endl;
 }
 
 std::string WrongAnimal::getType() const

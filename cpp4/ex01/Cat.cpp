@@ -16,9 +16,19 @@ Cat::Cat(const Cat &obj) : Animal(obj)
 
 Cat &Cat::operator=(const Cat &obj)
 {
+	int i = 0;
 	this->type = obj.type;
-	*this->brainptr = *obj.brainptr;
+	while (obj.brainptr->getIdea(i).empty() != true)
+	{
+		this->brainptr->addIdeaidx(obj.brainptr->getIdea(i), i);
+		i++;
+	}
 	return (*this);
+}
+
+void	Cat::makeSound() const
+{
+	std::cout << "*meow cutely*" << std::endl;
 }
 
 void	Cat::addIdea(std::string idea)
@@ -26,9 +36,9 @@ void	Cat::addIdea(std::string idea)
 	this->brainptr->addIdeas(idea);
 }
 
-void	Cat::affIdea(int i)
+void	Cat::affIdea()
 {
-	this->brainptr->affIdea(i);
+	this->brainptr->affIdea();
 }
 
 Cat::~Cat()

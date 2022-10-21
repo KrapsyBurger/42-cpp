@@ -11,6 +11,11 @@ Cat::Cat(const Cat &obj) : Animal(obj)
 	std::cout << "Cat copy constructor called" << std::endl;
 }
 
+void	Cat::makeSound() const
+{
+	std::cout << "*meow cutely*" << std::endl;
+}
+
 Cat &Cat::operator=(const Cat &obj)
 {
 	this->type = obj.type;

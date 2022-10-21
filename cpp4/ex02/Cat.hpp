@@ -9,12 +9,12 @@ class Cat : public Animal
 	private:
 		Brain *brainptr;
 	public:
+		void	makeSound() const;
 		Cat();
 		Cat(const Cat &obj);
 		Cat &operator=(const Cat &obj);
 		void	addIdea(std::string idea);
-		void	affIdea(int i);
-		void	makeSound() const;
+		void	affIdea();
 		virtual ~Cat();
 };
 

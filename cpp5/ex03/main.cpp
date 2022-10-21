@@ -11,7 +11,7 @@ int main()
 	Bureaucrat Nathan(25, "Nathan");
 	Intern someRandom;
 	Form *formulaire = someRandom.makeForm("robotomy request", "Bender");
-	Form *oui = someRandom.makeForm("shrubbery creation", "Soso Maness");
+	Form *oui = someRandom.makeForm("shrubbery creation", "SosoManess");
 	try
 	{
 		std::cout << CYAN;

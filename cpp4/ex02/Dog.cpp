@@ -16,9 +16,19 @@ Dog::Dog(const Dog &obj) : Animal(obj)
 
 Dog &Dog::operator=(const Dog &obj)
 {
+	int i = 0;
 	this->type = obj.type;
-	*this->brainptr = *obj.brainptr;
+	while (obj.brainptr->getIdea(i).empty() != true)
+	{
+		this->brainptr->addIdeaidx(obj.brainptr->getIdea(i), i);
+		i++;
+	}
 	return (*this);
+}
+
+void	Dog::makeSound() const
+{
+	std::cout << "*Bark loudely*" << std::endl;
 }
 
 void	Dog::addIdea(std::string idea)
@@ -26,14 +36,9 @@ void	Dog::addIdea(std::string idea)
 	this->brainptr->addIdeas(idea);
 }
 
-void	Dog::affIdea(int i)
+void	Dog::affIdea()
 {
-	this->brainptr->affIdea(i);
-}
-
-void	Dog::makeSound() const
-{
-	std::cout << "*BARK LOUDELY*" << std::endl;
+	this->brainptr->affIdea();
 }
 
 Dog::~Dog()
