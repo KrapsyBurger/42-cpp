@@ -4,6 +4,7 @@
 
 int main()
 {
+	//Animal test;
 	Cat youpi;
 	Dog coucou;
 
