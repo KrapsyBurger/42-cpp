@@ -20,7 +20,7 @@ class Array
 		{
 			std::cout << "constructor called" << std::endl;
 			unsigned long i = 0;
-			this->array = new T[n];
+			this->array = new T[n + 1];
 			while (i < n)
 			{
 				this->array[i] = 0;
@@ -50,7 +50,7 @@ class Array
 
 		~Array()
 		{
-			//delete[] this->array;
+			delete[] this->array;
 			std::cout << "destructor called" << std::endl;
 		};
 
@@ -60,9 +60,9 @@ class Array
 			return (i);   
 		};
 
-		T &operator[](unsigned long i)
+		T &operator[](unsigned int i)
 		{
-			if (i > this->size() || i < 0)
+			if (i > this->size())
 			{
 			 	throw exception();
 			}
