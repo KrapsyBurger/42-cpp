@@ -1,7 +1,7 @@
 #include "Form.hpp"
 #include "Bureaucrat.hpp"
 
-Form::Form()
+Form::Form() : name("unknown"), signing_grade(0), exec_grade(0)
 {
 	std::cout << "Form default constructor called" << std::endl;
 }
@@ -25,19 +25,16 @@ void		Form::sign_it()
 	this->is_signed = 1;
 }
 
-Form	&Form::operator=(const Form &obj)
-{
-	this->signing_grade = obj.signing_grade;
-	this->exec_grade = obj.exec_grade;
-	this->is_signed = obj.is_signed;
-	this->name = obj.name;
-	return (*this);
-}
-
-Form::Form(const Form &obj)
+Form::Form(const Form &obj) : name(obj.name), signing_grade(obj.signing_grade), exec_grade(obj.exec_grade)
 {
 	*this = obj;
 	std::cout << GREEN << "Form copy constructor called" << STOP << std::endl;
+}
+
+Form	&Form::operator=(const Form &obj)
+{
+	this->is_signed = obj.is_signed;
+	return (*this);
 }
 
 void	Form::beSigned(Bureaucrat &signer)

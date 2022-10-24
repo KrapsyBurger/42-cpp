@@ -1,6 +1,6 @@
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat()
+Bureaucrat::Bureaucrat() : name("unknown")
 {
 	std::cout << "Default Bureaucrat constructor called" << std::endl;
 }
@@ -15,7 +15,7 @@ Bureaucrat::Bureaucrat(int grade, std::string name) : name(name)
 	std::cout << GREEN <<  "Bureaucrat constructor called" << STOP << std::endl;
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat &obj)
+Bureaucrat::Bureaucrat(const Bureaucrat &obj) : name(obj.name)
 {
 	*this = obj;
 	std::cout << GREEN << "Bureaucrat copy constructor called" << STOP << std::endl;

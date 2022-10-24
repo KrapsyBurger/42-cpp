@@ -15,7 +15,7 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : name(name)
 	std::cout << GREEN <<  "Bureaucrat constructor called" << STOP << std::endl;
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat &obj)
+Bureaucrat::Bureaucrat(const Bureaucrat &obj) : name(obj.name)
 {
 	*this = obj;
 	std::cout << GREEN << "Bureaucrat copy constructor called" << STOP << std::endl;
