@@ -18,7 +18,8 @@ class Array
 
 		Array(unsigned int n)
 		{
-			unsigned int i = 0;
+			std::cout << "constructor called" << std::endl;
+			unsigned long i = 0;
 			this->array = new T[n];
 			while (i < n)
 			{
@@ -30,7 +31,8 @@ class Array
 
 		Array(const Array &obj)
 		{
-			this->array = new T[obj.size()];
+			std::cout << "copy constructor called" << std::endl;
+ 			this->array = new T[obj.size()];
 			this->array_size = obj.size();
 			*this = obj;
 		};
@@ -38,8 +40,6 @@ class Array
 		Array &operator=(const Array &obj)
 		{
 			unsigned int i = 0;
-			if (obj.size() > this->size())
-				throw exception();
 			while (i < obj.size())
 			{
 				this->array[i] = obj.array[i];
@@ -48,21 +48,24 @@ class Array
 			return (*this);
 		};
 
-		virtual ~Array()
+		~Array()
 		{
-			//delete [] this->array;
+			//delete[] this->array;
+			std::cout << "destructor called" << std::endl;
 		};
 
 		unsigned int size() const
 		{
 			unsigned int i = this->array_size;
-			return (i);
+			return (i);   
 		};
 
-		T &operator[](unsigned int i)
+		T &operator[](unsigned long i)
 		{
-			if (i > this->size())
+			if (i > this->size() || i < 0)
+			{
 			 	throw exception();
+			}
 			return (this->array[i]);
 		};
 
@@ -70,7 +73,7 @@ class Array
 		{
 			const char *what() const throw()
 			{
-				return ("Error");
+				return ("Error, invalid index");
 			}
 		};
 };

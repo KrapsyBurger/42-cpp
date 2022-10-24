@@ -1,7 +1,6 @@
 #include "Array.hpp"
 #include <cstdlib>
 #include <ctime>
-#include "color.hpp"
 
 
 #define MAX_VAL 750
@@ -9,7 +8,24 @@
 
 int main(int, char **)
 {
-	Array<int> numbers(MAX_VAL);
+	// Array<int> numbers(5);
+
+	// numbers[0] = 0;
+	// numbers[1] = 1;
+	// numbers[2] = 2;
+	// numbers[3] = 3;
+	// numbers[4] = 4;
+
+	// numbers[0] = 2500;
+
+	// Array<int> copy(numbers);
+	// Array<int> tmp = numbers;
+	// std::cout << copy[0] << std::endl;
+	// numbers[0] = 12;
+	// std::cout << copy[0] << std::endl;
+
+
+	Array<int> numbers((unsigned int )MAX_VAL);
 	int *mirror = new int[MAX_VAL];
 	srand(time(NULL));
 	for (int i = 0; i < MAX_VAL; i++)
@@ -18,10 +34,8 @@ int main(int, char **)
 		numbers[i] = value;
 		mirror[i] = value;
 	}
-	{
-		Array<int> tmp = numbers;
-		Array<int> test(tmp);
-	}
+	// Array<int> tmp = numbers;
+	// Array<int> test(tmp);
 	for (int i = 0; i < MAX_VAL; i++)
 	{
 		if (mirror[i] != numbers[i])
@@ -30,14 +44,14 @@ int main(int, char **)
 			return 1;
 		}
 	}
-	try
-	{
-	 	numbers[-2] = 0;
-	}
-	 catch(const std::exception& e)
-	{
-	 	std::cerr << e.what() << '\n';
-	}
+	// try
+	// {
+	//  	numbers[-2] = 0;
+	// }
+	//  catch(const std::exception& e)
+	// {
+	//  	std::cerr << e.what() << '\n';
+	// }
 	try
 	{
 		numbers[MAX_VAL] = 0;
@@ -50,6 +64,8 @@ int main(int, char **)
 	{
 		numbers[i] = rand();
 	}
-	delete [] mirror;
+	std::cout << numbers[59] << std::endl;
+	std::cout << numbers[MAX_VAL] << std::endl;
+	delete[] mirror;
 	return 0;
 }
