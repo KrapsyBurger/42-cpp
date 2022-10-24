@@ -9,5 +9,6 @@ int main()
 	tab.push_back(3);
 	tab.push_back(0);
 	easyfind(tab, 3);
+	easyfind(tab, 25);
 	return (0);
 }

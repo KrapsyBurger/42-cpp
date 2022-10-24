@@ -73,10 +73,6 @@ void	Span::addManyNumbers(std::vector<int>::iterator first, std::vector<int>::it
 	}
 }
 
-
-
-
-
 void Span::affData(void) {
 	std::cout << "Array : " << std::endl;
     for (unsigned long int i = 0; i < this->tab.size(); i++) {
