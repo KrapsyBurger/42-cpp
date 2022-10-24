@@ -58,4 +58,6 @@ int main()
     Bureaucrat rax("Rax", 21);
     rax = rix;
     std::cout << ORANGE << rax << STOP << std::endl;
+	Bureaucrat rox(rix);
+	std::cout << ORANGE << rox << STOP << std::endl;
 }
