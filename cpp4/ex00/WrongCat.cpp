@@ -17,6 +17,11 @@ WrongCat &WrongCat::operator=(const WrongCat &obj)
 	return (*this);
 }
 
+void	WrongCat::makeSound() const
+{
+	std::cout << "sounds like a wrong cat" << std::endl;
+}
+
 WrongCat::~WrongCat() 
 {
 	std::cout << "Wrong cat destructor called" << std::endl;
