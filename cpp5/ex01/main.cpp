@@ -13,7 +13,7 @@ void test(std::string name, int grade, int gradeup, int gradedown) {
         bur = new Bureaucrat(name, grade);
     }
     catch (std::exception const &except) {
-        aff_err("Cannot create Bureaucrat", except);
+		std::cerr << RED << BOLD << "Cannot create Bureaucrat" << ": " << STOP << LRED << except.what() << STOP << std::endl;
         return ;
     }
     
@@ -23,7 +23,7 @@ void test(std::string name, int grade, int gradeup, int gradedown) {
         }
     }
     catch (std::exception const &except) {
-        aff_err("Cannot grade down Bureaucrat", except);
+		std::cerr << RED << BOLD << "Cannot grade down Bureaucrat" << ": " << STOP << LRED << except.what() << STOP << std::endl;
     }
     
     try {
@@ -32,7 +32,7 @@ void test(std::string name, int grade, int gradeup, int gradedown) {
         }
     }
     catch (std::exception const &except) {
-        aff_err("Cannot grade up Bureaucrat", except);
+		std::cerr << RED << BOLD << "Cannot grade up Bureaucrat" << ": " << STOP << LRED << except.what() << STOP << std::endl;
     }
     delete bur;
 }
