@@ -1,4 +1,3 @@
-#include "color.hpp"
 #include <iostream>
 #include "Bureaucrat.hpp"
 #include <string>

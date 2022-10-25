@@ -1,5 +1,3 @@
-#include "color.hpp"
-
 #ifndef PRESIDENTIALPARDONFORM_HPP
 #define PRESIDENTIALPARDONFORM_HPP
 

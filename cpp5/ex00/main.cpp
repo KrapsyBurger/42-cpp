@@ -1,5 +1,4 @@
 #include "Bureaucrat.hpp"
-#include "color.hpp"
 
 void aff_err(std::string str, std::exception const &except) {
     std::cerr << RED << BOLD << str << ": " << STOP << LRED << except.what() << STOP << std::endl;

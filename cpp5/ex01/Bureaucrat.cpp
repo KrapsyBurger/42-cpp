@@ -62,6 +62,8 @@ void		Bureaucrat::gradeDecr()
 
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &obj)
 {
+	if (this == &obj)
+		return (*this);
 	this->grade = obj.grade;
 	return (*this);
 }

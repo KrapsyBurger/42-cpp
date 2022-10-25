@@ -11,6 +11,24 @@ Intern::Intern()
 	std::cout << GREEN << "Intern default constructor called" << STOP << std::endl;
 }
 
+Intern::Intern(const Intern &obj)
+{
+	*this = obj;
+}
+
+Intern &Intern::operator=(const Intern &obj)
+{
+	if (this == &obj)
+		return (*this);
+	this->forms[0] = obj.forms[0];
+	this->forms[1] = obj.forms[1];
+	this->forms[2] = obj.forms[2];
+	this->func_tab[0] = obj.func_tab[0];
+	this->func_tab[1] = obj.func_tab[1];
+	this->func_tab[2] = obj.func_tab[2];
+	return (*this);
+}
+
 Form *Intern::makePresidentialPardon(std::string target)
 {
 	return (new PresidentialPardonForm(target));

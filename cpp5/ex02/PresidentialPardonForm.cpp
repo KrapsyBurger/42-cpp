@@ -13,6 +13,8 @@ PresidentialPardonForm::PresidentialPardonForm(std::string target) : Form("Presi
 
 PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPardonForm &obj)
 {
+	if (this == &obj)
+		return (*this);
 	this->target = obj.target;
 	return (*this);
 }

@@ -34,6 +34,8 @@ Form::Form(const Form &obj) : name(obj.name), signing_grade(obj.signing_grade), 
 
 Form	&Form::operator=(const Form &obj)
 {
+	if (this == &obj)
+		return (*this);
 	this->is_signed = obj.is_signed;
 	return (*this);
 }

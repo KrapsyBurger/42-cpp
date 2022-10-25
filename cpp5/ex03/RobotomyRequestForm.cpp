@@ -13,6 +13,8 @@ RobotomyRequestForm::RobotomyRequestForm(std::string target) : Form("RobotomyReq
 
 RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &obj)
 {
+	if (this == &obj)
+		return (*this);
 	this->target = obj.target;
 	return (*this);
 }

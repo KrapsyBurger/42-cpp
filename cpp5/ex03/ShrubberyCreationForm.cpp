@@ -13,6 +13,8 @@ ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : Form("Shrubbe
 
 ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationForm &obj)
 {
+	if (this == &obj)
+		return (*this);
 	this->target = obj.target;
 	return (*this);
 }
